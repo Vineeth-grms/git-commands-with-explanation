@@ -1,0 +1,121 @@
+what is git ? 
+git is a distributed version control system that helps track changes to our code collaborate with others and manage project versions.
+
+git init
+
+git init is a command that initializes a new Git repository in your project.
+ It creates a hidden folder called .git, which Git uses to track changes in your project files.
+
+git add .
+
+git add .: Adds all changes (new files, modified files, deleted files) in the current directory to the staging area, 
+making them ready for the next commit.
+
+
+git commit -m "Descriptive commit message"
+
+Each commit represents a snapshot of our project at a point in time.
+
+this command saves the changes you have added to the stagingarea.	
+
+
+git status 
+Check the current state of working directory and staging area.
+
+Working Directory : it is your current local directory, where you modify your project files.
+
+Staging Area      : A place to store changes before commiting them.
+
+local repository  : where commits are stored with the full project history. 
+	          : The local repository is where Git stores the metadata and object database for your project on your local machine
+
+Remote Repository : A remote repository is hosted on a server (like GitHub) and is used to share your changes with others.
+
+
+
+git config --global --list
+git config --global --user.name "Vineeth-grms"
+git config --global --user.email "gumma272@gmail.com"
+
+git init
+git add .               => Add files to the staging area: ( add files to the remote repo) 
+git status
+git commit - m "message"
+git log
+git branch   
+git checkout "branchName" => change for branch
+
+git push origin (branchName) 
+
+git branch -d branchName  => delete for branch from local
+git push origin --delete branchName
+
+git pull origin main (pull main branch to sub branch)
+
+(Merging)
+first change main to subBranch
+i have written something in the subbranch and push
+ through (git push origin subBranchName) and checkout 
+to main (git checkout main) then (git merge subBrabch) the lastly (git push origin main)
+
+git push origin dev
+git checkout main
+git merge subBrabch
+
+git reset (commitId)
+git reset --hard (commitId)=> (completely remove the commit and discard all changes:)
+((((
+git rebase master(commit through master and checkout developer git log and git rebase master)
+integrate changes from one branch into another by moving or reapplying your commits on top of another base
+
+git checkout master 
+add some changes
+git add .
+git commit -m
+git diff developer => for deff command
+git checkout developer 
+git rebase master
+git push origin dev or master )))
+
+
+
+git tag <tagName> => v1.0 => create tags
+git tag -a v1.0 -m "Message"
+git show tagName(v1.0)
+git push origin v1.0(tagName)
+git push --tags => for all tags to push
+git tag -d v1.0  => delete for local
+git push origin -d v1.0 => delete for remote 
+
+git hooks  : Git hooks are custom scripts that Git can run automatically at specific points in our Git workflow.
+cd .git 
+ls
+cd hooks
+ls
+cat pre-commit.sample
+=> .git folder comes in our folder open setting cntrl (,)enter exclude and click on into(X) on .git
+then need to create files in hook folder names are pre-commit and post-commit
+post-commit( in this file we need to write like 
+		#!/bin/bash   
+		echo "I am a post commit hook"
+ 	git push origin master= > optional       )
+
+ls                      => checks for file is added or not
+
+chmod +x post-commit     => run in gitbash command prompt
+cd ..
+cd ..                   => back to repository
+
+for pre-commit
+goto hooks and create pre-commit file to run that file enter 
+chmod +x pre-commit    => run in gitbash command prompt
+
+in that file we need to write  node 
+which node => enter in gitbash command prompt
+copy the path and write in pre-commit file
+
+       (#!/c/Program Files/nodejs/node
+               console.log("I am pre commit hook", new Date()))
+
+
+
