@@ -1,3 +1,13 @@
+If we are using git first time we need to install git from the browser.
+After that open git bash and check the version ,command is git --version
+add follwing commands
+
+For the first time we are using git then we need to give some commands to add User Name and email
+
+git config --global --list
+git config --global --user.name "Vineeth-grms"
+git config --global --user.email "gumma272@gmail.com"
+
 what is git ? 
 git is a distributed version control system that helps track changes to our code collaborate with others and manage project versions.
 
@@ -32,10 +42,6 @@ local repository  : where commits are stored with the full project history.
 Remote Repository : A remote repository is hosted on a server (like GitHub) and is used to share your changes with others.
 
 
-
-git config --global --list
-git config --global --user.name "Vineeth-grms"
-git config --global --user.email "gumma272@gmail.com"
 
 git init
 git add .               => Add files to the staging area: ( add files to the remote repo) 
