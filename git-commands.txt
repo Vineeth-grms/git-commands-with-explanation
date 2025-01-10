@@ -48,9 +48,11 @@ git add .               => Add files to the staging area: ( add files to the rem
 git status
 git commit - m "message"
 git log
-git branch   
+git branch   => to list all branches
+git branch (branchName) => to create branch
+git branch -d (branchName) =>to delete the branch
 git checkout "branchName" => change for branch
-
+git checkout -b v2(branchName)     =>create the branch and switched the branch
 git push origin (branchName) 
 
 git branch -d branchName  => delete for branch from local
